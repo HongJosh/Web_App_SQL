@@ -36,9 +36,6 @@ public class ControllerPatientUpdate {
 		// TODO search for patient by id
 		//  if not found, return to home page using return "index"; 
 		//  else create PatientView and add to model.
-		// model.addAttribute("message", some message);
-		// model.addAttribute("patient", pv
-		// return editable form with patient data
 		pv.setId(id);
 		try (Connection con = getConnection();) {
 
@@ -103,8 +100,6 @@ public class ControllerPatientUpdate {
 				doctor_id = rs.getInt(1);
 
 				// TODO update patient profile data in database
-				// model.addAttribute("message", some message);
-				// model.addAttribute("patient", p)
 				ps = con.prepareStatement("update patient set street=?, city=?, state=?, zipcode=?, doctor_id=? where id=?");
 				ps.setString(1, p.getStreet());
 				ps.setString(2, p.getCity());
